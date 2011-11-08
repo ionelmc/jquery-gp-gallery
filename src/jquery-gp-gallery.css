@@ -1,0 +1,12 @@
+.gp-gallery-picture-zoom {
+    border: 1px solid #bbb;
+    margin: -6px 0 0 -6px;
+    position: absolute;
+    z-index: 100;
+    padding: 5px;
+    background: white;
+    box-shadow: 0 0 10px #999;
+}
+.gp-gallery-picture-hover {
+    box-shadow: 1px 1px 5px #333;
+}
