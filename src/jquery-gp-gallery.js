@@ -120,8 +120,6 @@
                                 pic.animate({
                                     marginTop: '-' + (item.original_height - item.height)/2 + 'px',
                                     marginLeft: '-' + (item.original_width - item.width)/2 + 'px',
-                                    //top: '50%',
-                                    //left: '50%',
                                     width: item.original_width + 'px',
                                     height: item.original_height + 'px',
                                 }, 100);
@@ -138,14 +136,12 @@
                         pic.stop().animate({
                             marginTop: '-6px',
                             marginLeft: '-6px',
-                            top: '0',
-                            left: '0',
                             width: item.width + 'px',
                             height: item.height + 'px',
                         }, 50, function() {
                             container.removeClass('gp-gallery-hover');
                             pic.removeClass('gp-gallery-picture-hover').removeClass('gp-gallery-picture-zoom').css({
-                                'margin': 0
+                                'margin': ''
                             });
                         });
                     } else {
