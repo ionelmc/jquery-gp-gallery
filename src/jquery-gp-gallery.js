@@ -1,11 +1,11 @@
 (function($) {
   $.fn.gpGallery = function(selector, options) {
     var $settings = {
-        'is_first_big': true,
-        'row_min_height': 180,
-        'row_max_height': 250,
-        'row_max_width': null,
-        'gutter': 5
+        is_first_big: true,
+        row_min_height: 180,
+        row_max_height: 250,
+        row_max_width: null,
+        gutter: 5
     };
     if (options) {
         $.extend($settings, options);
@@ -94,15 +94,15 @@
                 item.container.css({
                     height: item.height+"px",
                     width: item.width+"px",
-                    'margin-top': $settings.gutter + 'px'
+                    marginTop: $settings.gutter + 'px'
                 });
                 if (idx2 > 0) {
                     item.container.css({
-                        'margin-left': $settings.gutter + 'px'
+                        marginLeft: $settings.gutter + 'px'
                     });
                 } else {
                     item.container.css({
-                        'clear': 'left'
+                        clear: 'left'
                     });
                 }
                 pic.is_hover = null;
@@ -139,7 +139,7 @@
                         }, 50, function() {
                             container.removeClass('gp-gallery-hover');
                             pic.removeClass('gp-gallery-picture-hover').removeClass('gp-gallery-picture-zoom').css({
-                                'margin': ''
+                                margin: ''
                             });
                         });
                     } else {
@@ -158,7 +158,3 @@
     });
   };
 })(jQuery);
-
-
-
-
