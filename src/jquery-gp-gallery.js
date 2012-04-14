@@ -32,7 +32,7 @@
             last_bucket = {
                 items: [],
                 width: 0,
-                height: 0,
+                height: 0
             };
         $container.find(selector).each(function() {
             var $this = $(this);
@@ -54,8 +54,7 @@
                 original_height: $pic.height(),
                 aspect: $pic.width() / $pic.height(),
                 original_width: $pic.width()
-
-            }
+            };
             item.scale = $settings.row_min_height / item.original_height;
             item.width = item.original_width * item.scale;
             item.height = item.original_height * item.scale;
@@ -65,7 +64,7 @@
                 last_bucket = {
                     items: [],
                     width: 0,
-                    height: 0,
+                    height: 0
                 };
             }
             last_bucket.items.push(item);
@@ -103,7 +102,7 @@
                     });
                 } else {
                     item.container.css({
-                        'clear': 'left',
+                        'clear': 'left'
                     });
                 }
                 pic.is_hover = null;
@@ -121,15 +120,14 @@
                                     marginTop: '-' + (item.original_height - item.height)/2 + 'px',
                                     marginLeft: '-' + (item.original_width - item.width)/2 + 'px',
                                     width: item.original_width + 'px',
-                                    height: item.original_height + 'px',
+                                    height: item.original_height + 'px'
                                 }, 100);
                             }
-                        }, 200)
+                        }, 200);
                     }
                 }, function() {
-
                     if (pic.is_hover) {
-                        clearTimeout(pic.is_hover)
+                        clearTimeout(pic.is_hover);
                         pic.is_hover = null;
                     }
                     if (item.original_height > item.height && item.original_width > item.width && pic.hasClass('gp-gallery-picture-zoom')) {
@@ -137,7 +135,7 @@
                             marginTop: '-6px',
                             marginLeft: '-6px',
                             width: item.width + 'px',
-                            height: item.height + 'px',
+                            height: item.height + 'px'
                         }, 50, function() {
                             container.removeClass('gp-gallery-hover');
                             pic.removeClass('gp-gallery-picture-hover').removeClass('gp-gallery-picture-zoom').css({
