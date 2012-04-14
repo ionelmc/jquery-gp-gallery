@@ -51,10 +51,10 @@
             var item = {
                 pic: $pic,
                 container: $this,
-                original_height: $pic.height(),
-                aspect: $pic.width() / $pic.height(),
-                original_width: $pic.width()
+                original_height: $pic.height() || $pic.attr('height'),
+                original_width: $pic.width() || $pic.attr('width')
             };
+            item.aspect = item.original_width / item.original_height;
             item.scale = $settings.row_min_height / item.original_height;
             item.width = item.original_width * item.scale;
             item.height = item.original_height * item.scale;
