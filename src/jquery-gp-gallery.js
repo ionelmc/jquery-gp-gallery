@@ -1,11 +1,11 @@
 (function($) {
   $.fn.gpGallery = function(selector, options) {
     var $settings = {
-        'is_first_big': true,
-        'row_min_height': 180,
-        'row_max_height': 250,
-        'row_max_width': null,
-        'gutter': 5
+        is_first_big: true,
+        row_min_height: 180,
+        row_max_height: 250,
+        row_max_width: null,
+        gutter: 5
     };
     if (options) {
         $.extend($settings, options);
@@ -32,7 +32,7 @@
             last_bucket = {
                 items: [],
                 width: 0,
-                height: 0,
+                height: 0
             };
         $container.find(selector).each(function() {
             var $this = $(this);
@@ -51,11 +51,10 @@
             var item = {
                 pic: $pic,
                 container: $this,
-                original_height: $pic.height(),
-                aspect: $pic.width() / $pic.height(),
-                original_width: $pic.width()
-
-            }
+                original_height: $pic.height() || $pic.attr('height'),
+                original_width: $pic.width() || $pic.attr('width')
+            };
+            item.aspect = item.original_width / item.original_height;
             item.scale = $settings.row_min_height / item.original_height;
             item.width = item.original_width * item.scale;
             item.height = item.original_height * item.scale;
@@ -65,7 +64,7 @@
                 last_bucket = {
                     items: [],
                     width: 0,
-                    height: 0,
+                    height: 0
                 };
             }
             last_bucket.items.push(item);
@@ -95,15 +94,15 @@
                 item.container.css({
                     height: item.height+"px",
                     width: item.width+"px",
-                    'margin-top': '5px'
+                    marginTop: $settings.gutter + 'px'
                 });
                 if (idx2 > 0) {
                     item.container.css({
-                        'margin-left': $settings.gutter + 'px'
+                        marginLeft: $settings.gutter + 'px'
                     });
                 } else {
                     item.container.css({
-                        'clear': 'left',
+                        clear: 'left'
                     });
                 }
                 pic.is_hover = null;
@@ -121,15 +120,14 @@
                                     marginTop: '-' + (item.original_height - item.height)/2 + 'px',
                                     marginLeft: '-' + (item.original_width - item.width)/2 + 'px',
                                     width: item.original_width + 'px',
-                                    height: item.original_height + 'px',
+                                    height: item.original_height + 'px'
                                 }, 100);
                             }
-                        }, 200)
+                        }, 200);
                     }
                 }, function() {
-
                     if (pic.is_hover) {
-                        clearTimeout(pic.is_hover)
+                        clearTimeout(pic.is_hover);
                         pic.is_hover = null;
                     }
                     if (item.original_height > item.height && item.original_width > item.width && pic.hasClass('gp-gallery-picture-zoom')) {
@@ -137,11 +135,11 @@
                             marginTop: '-6px',
                             marginLeft: '-6px',
                             width: item.width + 'px',
-                            height: item.height + 'px',
+                            height: item.height + 'px'
                         }, 50, function() {
                             container.removeClass('gp-gallery-hover');
                             pic.removeClass('gp-gallery-picture-hover').removeClass('gp-gallery-picture-zoom').css({
-                                'margin': ''
+                                margin: ''
                             });
                         });
                     } else {
@@ -160,7 +158,3 @@
     });
   };
 })(jQuery);
-
-
-
-
