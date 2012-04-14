@@ -3,10 +3,6 @@
 ==========================================================
 
 Gallery that resizes the images to fit the container width and show zoomed in images on hover.
-
-.. Note::
-    
-    This is a work in progress !
     
     
 Demo
