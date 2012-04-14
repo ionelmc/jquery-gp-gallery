@@ -94,7 +94,7 @@
                 item.container.css({
                     height: item.height+"px",
                     width: item.width+"px",
-                    'margin-top': '5px'
+                    'margin-top': $settings.gutter + 'px'
                 });
                 if (idx2 > 0) {
                     item.container.css({
