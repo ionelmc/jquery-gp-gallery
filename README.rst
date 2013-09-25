@@ -31,7 +31,7 @@ Example::
 *Note:*
 
     Items should have sizes. Either specify the sizes on the images or whatnot or run the gpGallery
-    code *after* the documents is completely rendered (and sizes are available).
+    code *after* the document is rendered (and sizes are available).
     
 Demo
 ====
